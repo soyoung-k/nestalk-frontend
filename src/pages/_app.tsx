@@ -7,6 +7,8 @@ import theme from '@theme/.';
 import GlobalStyle from '@theme/globalStyle';
 import wrapper from '@store/configureStore';
 
+import '@src/mocks';
+
 const KakaoMain = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={theme}>
