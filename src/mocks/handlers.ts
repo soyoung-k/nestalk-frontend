@@ -1,14 +1,18 @@
 import { rest } from 'msw';
 
 export const handlers = [
-  rest.get('https://jsonplaceholder.typicode.com/posts/101', (req, res, ctx) => {
+  rest.post('http://localhost:8080/api/auth', (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
-        userId: 1234,
-        id: 101,
-        title: 'Hello MSW!',
-        body: 'This is mocked response by handlers.ts',
+        token: 'string',
+        user: {
+          birthday: '2021-03-17',
+          email: `${req.body.email}`,
+          name: '김철수',
+          phone: '010-000-0000',
+          userId: 0,
+        },
       }),
     );
   }),
