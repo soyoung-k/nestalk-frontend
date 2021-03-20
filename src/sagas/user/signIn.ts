@@ -1,4 +1,4 @@
-import { SIGNIN_REQUEST } from '@reducers/user/signin';
+import { SIGNIN_REQUEST } from '@reducers/user/signIn';
 import { createRequestSaga } from '@src/util/saga';
 import { takeLatest } from 'redux-saga/effects';
 import * as authAPI from '@apis/auth';
