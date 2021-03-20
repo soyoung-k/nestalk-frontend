@@ -1,16 +1,17 @@
 import { rest } from 'msw';
 
 export const handlers = [
-  rest.post('http://localhost:8080/api/auth', (req, res, ctx) => {
+  rest.post('http://localhost:8080/api/auth', (req: any, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
-        token: 'string',
+        token:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiaXJ0aGRheSI6IjIwMjEtMDMtMjAiLCJlbWFpbCI6InRlc3QxMjNAdGVzdC5jb20iLCJuYW1lIjoi6rmA66-466-4IiwicGhvbmUiOiIwMTAtMzMzMy0zMzMzIiwidXNlcklkIjowfQ.NK6zrBpeomkQIzC4YtiiDJIuGclB88ZfQA14eCeQF3U',
         user: {
-          birthday: '2021-03-17',
-          email: `${req.body.email}`,
-          name: '김철수',
-          phone: '010-000-0000',
+          birthday: '2021-03-20',
+          email: 'test123@test.com',
+          name: '김미미',
+          phone: '010-3333-3333',
           userId: 0,
         },
       }),
