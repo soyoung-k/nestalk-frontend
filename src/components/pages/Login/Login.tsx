@@ -1,25 +1,17 @@
 type LoginProps = {};
 
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
+
+import { useSignIn } from '@src/hooks';
 
 const Login: React.FC<LoginProps> = ({}) => {
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
+  const { signIn, message } = useSignIn();
   return (
     <div>
       {' '}
-      <Form
-        {...layout}
-        name="basic"
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-      >
+      <h1>{message}</h1>
+      <br />
+      <Form {...layout} name="basic" initialValues={{ remember: true }}>
         <Form.Item
           label="Useremail"
           name="useremail"
@@ -37,7 +29,7 @@ const Login: React.FC<LoginProps> = ({}) => {
         </Form.Item>
 
         <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" onClick={signIn}>
             Submit
           </Button>
         </Form.Item>
