@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+body {
+    min-width: 320px;
+    max-width: 720px;
+    font-size: 10px;
+    background-color: var(--primary-color);
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    color: var(--black-color);
+    margin: 0 auto;
+}
+
+.modal-container {
+    min-width: 300px;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: var(--gap-10);
+}
+
+section {
+  font-size: var(--font-size-regular);
+}
+
+/* top */
+.top {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+    padding: 10px 0 20px;
+    z-index: 9999;
+}
+
+/* input */
+input {
+    width: 100%;
+    padding: var(--gap-10) 0;
+    border-bottom: 1px solid var(--black-color);
+}
+
+/* button */
+button img {
+  width: 20px;
+  height: 20px;
+}
+
+.button-check {
+  padding: var(--gap-10) var(--gap-20);
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+
+/* modal-add-friend */
+.modal-add-friend {
+  height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.tap-menu {
+  width: 100%;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.tap-menu button {
+    padding: var(--gap-10) 0;
+    margin-right: var(--gap-10);
+    color: var(--gray-color);
+}
+
+/* 친구추가 > 탭메뉴 클릭된 버튼에 css 적용 */
+.tap-menu button.active {
+    border-bottom: 1px solid var(--black-color);
+    color: var(--black-color);
+}
+
+
+/* add-friend-phone & id */
+.add-friend-phone,
+.add-friend-id {
+    padding-top: var(--gap-20);
+}
+
+.friend-phone-wrap {
+    display: flex;
+    border-bottom: 1px solid var(--black-color);
+}
+
+.friend-phone-wrap select {
+    width: 20%;
+}
+
+.friend-phone-wrap input {
+    border: none;
+}
+
+.notice {
+    padding-top: var(--gap-5);
+    padding-bottom: var(--gap-20);
+    color: var(--gray-color);
+}
+
+
+/* final-message */
+.add-friend-phone-final-message,
+.add-friend-id-final-message {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-top: var(--gap-20);
+    background-color: var(--white-color);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.add-friend-phone-final-message p,
+.add-friend-id-final-message p {
+    padding-bottom: var(--gap-20);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.add-friend-phone-final-message button, 
+.add-friend-id-final-message button {
+    width: 100%;
+    font-size: var(--font-size-regular);
+    padding-top: var(--gap-5);
+    padding-bottom: var(--gap-10);
+    background-color: none;
+}
+
+
+/* display: none */
+.add-friend-phone {
+  /* display: none; */
+}
+.add-friend-phone-final-message {
+  /* display: none; */
+}
+.add-friend-phone-final-message .true {
+  display: none;
+}
+.add-friend-id {
+  /* display: none; */
+}
+.add-friend-id-final-message {
+  display: none;
+}
+.add-friend-id-final-message .false {
+  display: none;
+}
