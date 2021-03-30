@@ -20,8 +20,70 @@
   <!-- 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대)-->
 
   <!-- 채팅창(새 창)  -->
+  <section class="chatting-room container">
+    <div class="modal-header">
+      <div class="modal-header__column">
+        <button type="button" class="chatting-room__thumbnail">
+          <img src="./image/icon/user-620px.png" alt="friend profile photo" />
+        </button>
+        <h1 class="modal-header__title">Friend</h1>
+      </div>
 
-  <!-- 채팅창 > 검색 버튼 클릭 시 -->
+      <div class="modal-header__column">
+        <button type="button">
+          <img src="./image/icon/search-24px.svg" alt="search button" />
+        </button>
+        <button type="button">
+          <img src="./image/icon/menu-24px.svg" alt="more button" />
+        </button>
+      </div>
+    </div>
+
+    <!-- 채팅창 > 검색 버튼 클릭 시 -->
+
+
+    <div class="chatting-section container">
+      <div class="chat__date">2021년 3월 13일 토요일
+      </div>
+      <div class="chat-section-row">
+        <button class="chat-section-row__photo">
+          <img src="./image/icon/user-620px.png" alt="friend profile photo" />
+        </button>
+        <div class="chat-section-row__content">
+          <span class="chat-section__name">Friend</span>
+          <div class="chat-section__talk">
+            <span class="chat__bubble">Hello</span>
+            <span class="chat__time">12:20</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-section-row message-row--own">
+        <div class="chat-section-row__content">
+          <div class="chat-section__talk chat-section--send">
+            <span class="chat__bubble">Hello!</span>
+            <span class="chat__time"> 12:25</span>
+          </div>
+        </div>
+      </div>
+      <form action="#" method="POST" class="chat-input">
+        <div class="chat-input__column">
+          <label for="import-file">
+            <img src="./image/icon/add_circle_outline-24px.svg" alt="
+            import file button" />
+          </label>
+          <input type="file" id="import-file" multiple></input>
+        </div>
+        <div class="chat-input__column">
+          <textarea required></textarea>
+        </div>
+        <div class="chat-input__column">
+          <button type="submit" name="typing mege">
+            <img src="./image/icon/arrow_upward-24px.svg" alt="send a chat button" />
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
 
   <!-- 채팅창 > 더보기 버튼 클릭 시 -->
 

@@ -23,6 +23,16 @@ input {
   color: inherit;
   cursor: pointer;
 }
+
+textarea{
+  outline: none;
+  border: none;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+  overflow-y: hidden;
+}
+
 /* 
 ios input style reset
 input {
