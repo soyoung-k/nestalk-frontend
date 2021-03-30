@@ -185,6 +185,24 @@ button img{
 
 
 /* 채팅창 > 검색 버튼 클릭 시 */
+.chatting-room__search{
+  top: 65px;
+  height: 50px;
+}
+.search-header__column:first-child{
+  flex: 1;
+  margin-right: var(--gap-10);
+}
+.search__input{
+  width: 100%;
+  height: 30px;
+  padding: 0 var(--gap-10);
+  background-color: var(--primary-color);
+}
+
+.search-header__column button{
+  vertical-align: middle;
+}
 
 /* 채팅창 > 더보기 버튼 클릭 시  */
 
