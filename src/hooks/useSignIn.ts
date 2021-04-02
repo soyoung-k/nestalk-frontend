@@ -1,5 +1,5 @@
 import { RootState } from '@src/reducers';
-import { signIn } from '@reducers/user/signIn';
+import { signIn } from '@src/reducers/user/signIn';
 import { useState, useCallback, Dispatch, SetStateAction, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 

@@ -1,6 +1,6 @@
 import produce from 'immer';
 
-import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE } from './signin';
+import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE } from './signIn';
 
 export interface UserInfo {
   userid: number;
