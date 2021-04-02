@@ -25,14 +25,8 @@ input{
 }
 
 /* 채팅목록 > 검색 버튼 클릭 시 */
-
-/* 채팅목록 > 새로운 채팅 버튼 클릭 시(대화상대 선택) */
-
-/* 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대) */
-
-/* 채팅창(새 창) */
+.search,
 .modal-header, 
-.chatting-room__search,
 .chat-input{
   position: sticky;
   top: 0;
@@ -43,8 +37,53 @@ input{
   width: 100%;
   height: 65px;
   padding: var(--gap-10);
+  background-color: var(--primary-color);
+}
+
+.search.round{
+  top: 0;
+  height: 50px;
+}
+
+.search-header__column:first-child img{
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+}
+
+.search-header__column:first-child{
+  flex: 1;
+  margin-right: var(--gap-10);
+}
+
+.search__input{
+  width: 100%;
+  height: 30px;
+  padding: 0 var(--gap-10);
+  background-color: var(--primary-color);
+}
+
+.round .search__input{
+  position: relative;
+  padding-left: 30px;
   background-color: var(--secondary-color);
-  
+  border-radius: 20px;
+}
+
+.search-header__column button{
+  vertical-align: middle;
+}
+
+
+/* 채팅목록 > 새로운 채팅 버튼 클릭 시(대화상대 선택) */
+
+/* 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대) */
+
+/* 채팅창(새 창) */
+.modal-header{
+  background-color: var(--secondary-color);
 }
 
 .modal-header__column{
@@ -164,6 +203,7 @@ input{
   width: 100%;
   max-width: 650px;
   height: 50px;
+  background-color: var(--secondary-color);
 }
 
 .chat-input__column:first-child label{
@@ -191,27 +231,49 @@ input{
 
 
 /* 채팅창 > 검색 버튼 클릭 시 */
-.chatting-room__search{
+.square.search{
   top: 65px;
   height: 50px;
+  background-color: var(--secondary-color);
 }
-.search-header__column:first-child{
-  flex: 1;
-  margin-right: var(--gap-10);
-}
-.search__input{
+
+.square .search__input{
   width: 100%;
   height: 30px;
   padding: 0 var(--gap-10);
   background-color: var(--primary-color);
 }
 
-.search-header__column button{
-  vertical-align: middle;
-}
 
 /* 채팅창 > 더보기 버튼 클릭 시  */
 
 /* 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시  */
 
 /* 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)  */
+
+
+
+
+
+
+
+
+
+
+
+/* modal display : none */
+.chatting-room{
+  display: none;
+}
+
+.square{
+  display: none;
+  /* 활성화 시킬때 block 아니고 flex로 해야함 */
+  /* display: flex; */
+}
+
+.round.search{
+  display: none;
+   /* 활성화 시킬때 block 아니고 flex로 해야함 */
+  /* display: flex; */
+}
