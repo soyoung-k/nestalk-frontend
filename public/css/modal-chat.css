@@ -15,6 +15,10 @@ body {
   margin: 0 auto;
 }
 
+button{
+  background-color: transparent;
+}
+
 button img{
   width: 20px;
   height: 20px;
@@ -246,7 +250,24 @@ input{
 
 
 /* 채팅창 > 더보기 버튼 클릭 시  */
+.more-chatting-room{
+  position: fixed;
+  top: 65px;
+  right: 0;
+  width: 100px;
+  background-color: var(--secondary-color);
+}
 
+.more-chatting-room button{
+  width: 100%;
+  padding: var(--gap-10);
+  font-size: var(--font-size-regular);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.more-chatting-room button:hover{
+  background-color: var(--primary-color);
+}
 /* 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시  */
 
 /* 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)  */
