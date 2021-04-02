@@ -1,6 +1,6 @@
 import produce from 'immer';
 
-import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE, LOAD_USER } from './signIn';
+import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE, LOAD_USER, LOGOUT } from './signIn';
 
 export interface UserInfo {
   token: string;
@@ -35,6 +35,8 @@ const user = (state: UserInitialState = initialState, action: ReducerAction) =>
         return { ...state, authError: action.payload };
       case LOAD_USER:
         return { ...state, info: action.payload.info };
+      case LOGOUT:
+        return { ...state, info: null };
     }
   });
 
