@@ -1,0 +1,300 @@
+/* Basic setting */
+body {
+  min-width: 320px;
+  max-width: 720px;
+  font-size: 10px;
+  background-color: var(--primary-color);
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  color: var(--black-color);
+  margin: 0 auto;
+}
+
+.container{
+  min-width: 300px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+button{
+  background-color: transparent;
+}
+
+button img{
+  width: 20px;
+  height: 20px;
+}
+
+input{
+  cursor: auto;
+}
+
+/* 채팅목록 > 검색 버튼 클릭 시 */
+.search,
+.modal-header, 
+.chat-input{
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  padding: var(--gap-10);
+  background-color: var(--primary-color);
+}
+
+.search.round{
+  top: 0;
+  height: 50px;
+}
+
+.search-header__column:first-child img{
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+}
+
+.search-header__column:first-child{
+  flex: 1;
+  margin-right: var(--gap-10);
+}
+
+.search__input{
+  width: 100%;
+  height: 30px;
+  padding: 0 var(--gap-10);
+  background-color: var(--primary-color);
+}
+
+.round .search__input{
+  position: relative;
+  padding-left: 30px;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+}
+
+.search-header__column button{
+  vertical-align: middle;
+}
+
+
+/* 채팅목록 > 새로운 채팅 버튼 클릭 시(대화상대 선택) */
+
+/* 채팅창 > 더보기 > 채팅방 대화상대 추가 버튼 클릭 시 (대화상대 초대) */
+
+/* 채팅창(새 창) */
+.modal-header{
+  background-color: var(--secondary-color);
+}
+
+.modal-header__column{
+  display: flex;
+  align-items: center;
+}
+
+.modal-header__column button{
+  margin-right:var(--gap-10) ;
+}
+
+.modal-header__title{
+  font-size: var(--font-size-regular);
+}
+
+.modal-header__column:last-child button{
+  width: 20px;
+  height: 20px;
+}
+
+.modal-header__column:last-child button:last-child{
+  margin-right: 0;
+}
+
+.modal-header__column:last-child button img{
+  width: 100%;
+}
+
+.chatting-room__thumbnail{
+  width: 45px;
+  height: 45px;
+}
+
+.chatting-room__thumbnail img{
+  width: 100%;
+  height: 100%;
+  border-radius: 40%;
+}
+
+.chatting-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--gap-10);
+}
+
+.chat__date {
+  color: var(--gray-color);
+  background-color: var(--secondary-color);
+  padding: 5px 8px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.chat-section-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.chat-section-row__photo{
+  width: 40px;
+  height: 40px;
+  margin-right: var(--gap-10);
+  border-radius: 15px;
+  background-color: var(--white-color);
+}
+
+.chat-section-row__photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.chat-section__name {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.chat-section__talk {
+  display: flex;
+  align-items: flex-end;
+}
+
+.chat__bubble {
+  background-color: var(--white-color);
+  padding: 5px var(--gap-10);
+  font-size: var(--font-size-regular);
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  margin-right: 7px;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+}
+
+.chat-section--send .chat__bubble {
+  background-color: var(--secondary-color);
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  margin-right: 0;
+  margin-left: 7px;
+}
+
+.chat-section--send {
+  flex-direction: row-reverse;
+}
+
+.chat-input{
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  max-width: 650px;
+  height: 50px;
+  background-color: var(--secondary-color);
+}
+
+.chat-input__column:first-child label{
+  cursor: pointer;
+}
+
+.chat-input__column:first-child input{
+  width: 1px;
+  height: 0;
+}
+
+.chat-input__column:nth-child(2){
+  flex: 1;
+  padding: 0 var(--gap-10);
+}
+
+.chat-input__column textarea{
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  padding: var(--gap-5) var(--gap-10);
+  background-color: var(--white-color);
+  font-size: var(--font-size-regular);
+}
+
+
+/* 채팅창 > 검색 버튼 클릭 시 */
+.square.search{
+  top: 65px;
+  height: 50px;
+  background-color: var(--secondary-color);
+}
+
+.square .search__input{
+  width: 100%;
+  height: 30px;
+  padding: 0 var(--gap-10);
+  background-color: var(--primary-color);
+}
+
+
+/* 채팅창 > 더보기 버튼 클릭 시  */
+.more-chatting-room{
+  position: fixed;
+  top: 65px;
+  right: 0;
+  width: 100px;
+  background-color: var(--secondary-color);
+}
+
+.more-chatting-room button{
+  width: 100%;
+  padding: var(--gap-10);
+  font-size: var(--font-size-regular);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.more-chatting-room button:hover{
+  background-color: var(--primary-color);
+}
+/* 채팅창 > 더보기 > 채팅방 설정 버튼 클릭 시  */
+
+/* 채팅창 > 더보기 > 채팅방 나가기 버튼 클릭 시 (알림 팝업)  */
+
+
+
+
+
+
+
+
+
+
+
+/* modal display : none */
+.chatting-room{
+  display: none;
+}
+
+.square{
+  display: none;
+  /* 활성화 시킬때 block 아니고 flex로 해야함 */
+  /* display: flex; */
+}
+
+.round.search{
+  display: none;
+   /* 활성화 시킬때 block 아니고 flex로 해야함 */
+  /* display: flex; */
+}

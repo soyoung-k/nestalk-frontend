@@ -1,18 +1,25 @@
-import React from 'react';
-import Header from '../Header';
-import Layout from './styled';
+import React, { memo, useCallback } from 'react';
 
-interface Props {
+import Menu from '../Menu';
+import MainLayout from './styled';
+import { useChatRoom } from '@src/hooks/useChatRoom';
+
+interface AppLayoutProps {
   children: React.ReactNode;
 }
 
-const AppLayout = ({ children }: Props) => (
-  <>
-    <Layout>
-      <Header />
-      {children}
-    </Layout>
-  </>
-);
+const AppLayout: React.FC<AppLayoutProps> = memo(({ children }) => {
+  const roomListInfo = useChatRoom();
+  const logout = useCallback(() => {}, []);
+
+  return (
+    <>
+      <MainLayout>
+        <Menu roomList={roomListInfo} logout={logout} />
+        {children}
+      </MainLayout>
+    </>
+  );
+});
 
 export default AppLayout;
