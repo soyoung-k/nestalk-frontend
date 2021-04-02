@@ -3,6 +3,7 @@ import produce from 'immer';
 import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE } from './signIn';
 
 export interface UserInfo {
+  token: string;
   userid: number;
   name: string;
   email: string;
@@ -30,7 +31,7 @@ const user = (state: UserInitialState = initialState, action: ReducerAction) =>
         return { info: null, authError: null };
 
       case SIGNIN_SUCCESS:
-        return { ...state, info: action.payload.user };
+        return { ...state, info: Object.assign({ token: action.payload.token }, action.payload.user) };
 
       case SIGNIN_FAILURE:
         return { ...state, authError: action.payload };
