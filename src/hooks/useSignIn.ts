@@ -1,8 +1,11 @@
-import { RootState } from '@src/reducers';
-import { signIn } from '@src/reducers/user/signIn';
 import { useState, useCallback, Dispatch, SetStateAction, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { useCookies } from 'react-cookie';
+import jwt from 'jsonwebtoken';
+
+import { RootState } from '@src/reducers';
+import { signIn, loadUser } from '@src/reducers/user/signIn';
 
 const useSignIn = (): {
   setEmail: Dispatch<SetStateAction<string>>;
@@ -26,6 +29,13 @@ const useSignIn = (): {
       });
     }
   }, [info]);
+
+  useEffect(() => {
+    if (cookie.user) {
+      const decodedUserInfo = jwt.decode(cookie.user);
+      dispatch(loadUser(decodedUserInfo));
+    }
+  }, [cookie]);
 
   // test메세지
   const [message, setMessage] = useState(`You're not logged in`);
