@@ -28,15 +28,21 @@ const user = (state: UserInitialState = initialState, action: ReducerAction) =>
   produce(state, (draft: UserInitialState) => {
     switch (action.type) {
       case SIGNIN_REQUEST:
-        return { info: null, authError: null };
+        draft.info = null;
+        draft.authError = null;
+        break;
       case SIGNIN_SUCCESS:
-        return { ...state, info: Object.assign({ token: action.payload.token }, action.payload.user) };
+        draft.info = Object.assign({ token: action.payload.token }, action.payload.user);
+        break;
       case SIGNIN_FAILURE:
-        return { ...state, authError: action.payload.error };
+        draft.authError = action.payload.error;
+        break;
       case LOAD_USER:
-        return { ...state, info: action.payload.info };
+        draft.info = action.payload.info;
+        break;
       case LOGOUT:
-        return { ...state, info: null };
+        draft.info = null;
+        break;
     }
   });
 
