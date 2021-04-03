@@ -1,19 +1,12 @@
 import { call, put } from 'redux-saga/effects';
 
-export const createRequestActionTypes = (type) => {
-  const SUCCESS = `${type}_SUCCESS`;
-  const FAILURE = `${type}_FAILURE`;
-  return [type, SUCCESS, FAILURE];
-};
-
-export const createRequestSaga = (type, request) => {
+export const createRequestSaga = (type: string, request) => {
   const SUCCESS = `${type}_SUCCESS`;
   const FAILURE = `${type}_FAILURE`;
 
   return function* (action) {
     try {
       const response = yield call(request, action.payload);
-      console.log('response', response);
       yield put({
         type: SUCCESS,
         payload: response.data,

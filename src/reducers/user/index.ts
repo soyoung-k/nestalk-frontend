@@ -1,6 +1,6 @@
 import produce from 'immer';
 
-import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE, LOAD_USER, LOGOUT } from './signIn';
+import { SIGNIN_REQUEST, SIGNIN_SUCCESS, SIGNIN_FAILURE, LOAD_USER, LOGOUT, SignInActions } from './signIn';
 
 export interface UserInfo {
   token: string;
@@ -21,7 +21,7 @@ const initialState: UserInitialState = {
   authError: null,
 };
 
-type ReducerAction = typeof SIGNIN_REQUEST;
+type ReducerAction = SignInActions;
 
 //모든 user 상태 처리
 const user = (state: UserInitialState = initialState, action: ReducerAction) =>
@@ -32,7 +32,7 @@ const user = (state: UserInitialState = initialState, action: ReducerAction) =>
       case SIGNIN_SUCCESS:
         return { ...state, info: Object.assign({ token: action.payload.token }, action.payload.user) };
       case SIGNIN_FAILURE:
-        return { ...state, authError: action.payload };
+        return { ...state, authError: action.payload.error };
       case LOAD_USER:
         return { ...state, info: action.payload.info };
       case LOGOUT:
