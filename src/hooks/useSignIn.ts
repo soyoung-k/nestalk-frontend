@@ -5,7 +5,8 @@ import { useCookies } from 'react-cookie';
 import jwt from 'jsonwebtoken';
 
 import { RootState } from '@src/reducers';
-import { signIn, loadUser, logout } from '@src/reducers/user/signIn';
+import { signInRequest, loadUser, logout } from '@src/reducers/user/signIn';
+import { UserInfo } from '@src/reducers/user';
 
 const useSignIn = (): {
   setEmail: Dispatch<SetStateAction<string>>;
@@ -34,7 +35,7 @@ const useSignIn = (): {
 
   useEffect(() => {
     if (cookie.user) {
-      const decodedUserInfo = jwt.decode(cookie.user);
+      const decodedUserInfo = jwt.decode(cookie.user) as UserInfo;
       dispatch(loadUser(decodedUserInfo));
     }
   }, [cookie]);
@@ -57,7 +58,7 @@ const useSignIn = (): {
     setPassword,
     message,
     logout: handleLogout,
-    signIn: useCallback(() => dispatch(signIn(email, password)), [dispatch]),
+    signIn: useCallback(() => dispatch(signInRequest(email, password)), [dispatch]),
   };
 };
 
